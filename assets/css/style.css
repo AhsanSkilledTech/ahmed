@@ -64,6 +64,59 @@ h1,h2,h3,h4,h5,h6,p,ul,li,a,form{
 .jst-btw{
   justify-content: space-between;
 }
+/* dropdown start */
+.navDrpdown-inner,
+.navDrpdown{
+  position: absolute;
+  top: calc(100% + 7px);
+  width: 200px;
+  padding-block: 15px;
+  background-color: #000;
+  border-bottom: 2px solid #00C3FF;
+  border-radius: 0 0 3px 3px;
+}
+.navDrpdown-inner-list,
+.navDrpdown-list{
+  padding: 8px 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navDrpdown-inner-list::before,
+.navDrpdown-list::before{
+  content: "";
+  width: 2px;
+  height: 0%;
+  background-color: #00C3FF;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.2s ease-in-out;
+}
+.navDrpdown-inner-list:hover::before,
+.navDrpdown-list:hover::before{
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+}
+.navDrpdown-list i{
+  color: #fff;
+  font-size: 13px;
+}
+.navDrpdown-inner-list:hover,
+.navDrpdown-list:hover{
+  background-color: #041C32;
+}
+.navDrpdown-inner-link,
+.navDrpdown-link{
+  font-size: 14px;
+}
+.navDrpdown-inner{
+  top: 0;
+  left: 100%;
+  width: 100%;
+}
+
 input,
 button{
   border: none;
@@ -305,8 +358,10 @@ a:hover{
 }
 .navbar_logo_img{
   width: 64px;
+  max-width: 64px;
   height: auto;
   max-height: 76px;
+  object-fit: contain;
 }
 .btn{
   display: inline-flex;
@@ -466,8 +521,11 @@ a:hover{
 /*  */
 /* banner start */
 .banner{
-  background: url(../images/banner1.png) no-repeat bottom;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-blend-mode: overlay;
   background-size: cover;
+  border-radius: 0 0 0 120px;
   /* padding: 450px 0 100px 0; */
 }
 .banner .swiper-pagination{
@@ -565,6 +623,11 @@ a:hover{
   align-items: center;
   border-radius: 50%;
 }
+.banner_bottom_box_mini img{
+  max-width: 33px;
+  max-height: 29px;
+  object-fit: contain;
+}
 .banner_bottom_box_mini1{
   background-color: #A57B2C;
 }
@@ -645,6 +708,11 @@ a:hover{
 }
 .aboutus_box2_p_img_holder{
   transform: translateY(15px);
+}
+.aboutus_box2_p_img_holder img{
+  max-width: 99px;
+  max-height: 90px;
+  object-fit: contain;
 }
 /* about us end */
 .clients{
@@ -838,11 +906,16 @@ a:hover{
   overflow: hidden;
   position: relative;
   transition: 0.3s;
+  width: 100%;
+  max-width: 389px;
+}
+.newsCard_img_holder{
+  width: 100%;
 }
 .newsCard_img_holder img{
   width: 100%;
-  max-width: 389px;
-  max-height: 396px;
+  height: 396px;
+  object-fit: cover;
   border-radius: 15px;
 }
 .newsCard:hover .newsCard_content_p{
@@ -929,6 +1002,10 @@ a:hover{
 }
 .subscription_box2_img img{
   object-fit: contain;
+  width: 100%;
+  height: 100%;
+  max-width: 403px;
+  max-height: 403px;
 }
 .subscription_heading{
   font-size: 20px;
@@ -1022,6 +1099,13 @@ a:hover{
 .footer_logo{
   display: flex;
   margin-bottom: 28px;
+}
+.footer_logo img {
+  width: 64px;
+  max-width: 64px;
+  height: auto;
+  max-height: 76px;
+  object-fit: contain;
 }
 .contact_link{
   display: flex;
@@ -1183,10 +1267,14 @@ a:hover{
   border-radius: 20px;
 }
 .why_img_box1{
+  width: 323px;
+  height: 277px;
   max-width: 323px;
   max-height: 277px;
 }
 .why_img_box2{
+  width: 421px;
+  height: 360px;
   max-width: 421px;
   max-height: 360px;
 }
@@ -1291,15 +1379,7 @@ a:hover{
   min-height: 430px;
   text-align: center;
 }
-.servicesCard1{
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),url(../images/services1.png);
-}
-.servicesCard2{
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),url(../images/services2.png);
-}
-.servicesCard3{
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),url(../images/services3.png);
-}
+
 .servicesCard_heading{
   font-size: 24px;
   font-weight: bold;
@@ -1565,7 +1645,9 @@ a:hover{
   border-radius: 7px;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  max-width: 70px;
+  max-height: 95px;
+  object-fit: contain;
 }
 .newsLetter_form_wrapper{
   display: flex;
@@ -2145,6 +2227,7 @@ a:hover{
 }
 .servicesDetsilsCard_img_holder img{
   height: 370px;
+  width: 100%;
   object-fit: cover;
   border-radius: 15px;
 }
@@ -2510,6 +2593,9 @@ html.darkActive,
 }
 .darkActive .nav_bar.sticky{
   background-color: #064663;
+}
+.navbar_list_item{
+  position: relative;
 }
 .darkActive .nav_bar.sticky .navbar_list_item.active {
   background-color: #04293A;

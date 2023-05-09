@@ -677,17 +677,17 @@ a:hover{
   padding: 0 0 50px 0;
 }
 .aboutus_box1{
-  width: 40%;
+  width: 30%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  column-gap: 44px;
+  column-gap: 25px;
 }
 
 .aboutus_box1-abt1{
-  width: 216px;
-  height: 338px;
-  object-fit: cover;
+  width: 249px;
+  height: auto;
+  object-fit: contain;
   border-radius: 24px 10px 24px 10px;
 }
 .aboutus_box1-abt2{
@@ -697,7 +697,7 @@ a:hover{
   border-radius: 10px;
 }
 .aboutus_box2{
-  width: 55%;
+  width: 68%;
 }
 .aboutus_box2_p{
   font-size: 24px;
@@ -1188,38 +1188,55 @@ a:hover{
   position: relative;
 }
 .subBanner--about{
-  background: url(../images/about.png);
+  background: url(../images/about.png) no-repeat center;
+  background-position: center;
+  background-size: cover;
 }
 .darkActive .subBanner--about{
   background: linear-gradient(rgba(4,28,50,0.4),rgba(4,28,50,0.6)),url(../images/about.png);
+  background-position: center;
+  background-size: cover;
 }
 .subBanner--blog{
   background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)),url(../images/blog.jpg);
+  background-size: cover;
   background-position: bottom;
 }
 .darkActive .subBanner--blog{
   background-image: linear-gradient(rgba(4,28,50,0.4),rgba(4,28,50,0.6)),url(../images/blog.jpg);
+  background-position: center;
+  background-size: cover;
 }
 .subBanner--team{
   background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)),url(../images/team.png);
+  background-size: cover;
   background-position: bottom;
 }
 .darkActive .subBanner--team{
   background-image: linear-gradient(rgba(4,28,50,0.4),rgba(4,28,50,0.6)),url(../images/team.png);
+  background-position: center;
+  background-size: cover;
 }
 .subBanner--services{
   background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)),url(../images/team.png);
   background-position: bottom;
+  background-size: cover;
 }
 .darkActive .subBanner--services{
   background-image: linear-gradient(rgba(4,28,50,0.4),rgba(4,28,50,0.6)),url(../images/team.png);
+  background-position: center;
+  background-size: cover;
 }
 .subBanner--contact{
   background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)),url(../images/contact.jpg);
   background-position: center;
+  background-size: cover;
+  background-position: center;
 }
 .darkActive .subBanner--contact{
   background-image: linear-gradient(rgba(4,28,50,0.4),rgba(4,28,50,0.6)),url(../images/contact.jpg);
+  background-position: center;
+  background-size: cover;
 }
 .subBanner_name{
   position: absolute;
@@ -1264,21 +1281,16 @@ a:hover{
 .why_img_box{
   position: relative;
   z-index: 0;
-  border-radius: 20px;
 }
 .why_img_box1{
-  width: 323px;
-  height: 277px;
   max-width: 323px;
   max-height: 277px;
 }
 .why_img_box2{
-  width: 421px;
-  height: 360px;
   max-width: 421px;
   max-height: 360px;
 }
-.why_img_box1::after{
+/* .why_img_box1::after{
   content: "";
   position: absolute;
   width: 100%;
@@ -1289,16 +1301,19 @@ a:hover{
   top: 14px;
   left: 14px;
   z-index: -1;
-}
-.why_img_box3::after{
+} */
+/* .why_img_box3::after{
   left: auto;
   right: 14px;
-}
+} */
 .why_img_box img{
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-height: 277px;
+  object-fit: contain;
   border-radius: 20px;
+}
+.why_img_box2 img{
+  max-height: 360px;
 }
 .why_content{
   background-color: #fff;
@@ -2630,4 +2645,72 @@ html.darkActive,
 .darkActive .contactBox_holder,
 .darkActive .blogBox_comment_mini_img_holder{
   color: #fff;
+}
+/* tabs on about page */
+.serpag-wrpr{
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 35px 32px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.orPagList{
+  width: 190px;
+}
+.abouttabscont{
+  width: calc(100% - 200px);
+}
+.orPagList__btn{
+  display: flex;
+  align-items: center;
+  width: calc(100% - 25px);
+  padding: 18px 20px;
+  line-height: 1;
+  text-decoration: initial;
+  border-radius: 8px;
+  font-size: 18px;
+  color: #333231;
+
+  font-weight: bold;
+}
+.orPagList__btn.active{
+  background-color: #BA9A60;
+  color: var(--white);
+}
+.contArtcl{
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  color: #333231;
+}
+.darkActive .serpag-wrpr{
+  background-color: #04293A;
+}
+.darkActive .orPagList__btn,
+.darkActive .contArtcl{
+  color: #fff;
+}
+.darkActive .orPagList__btn.active{
+  background-color: #064663;
+}
+.contactBox_form_btn--21{
+  width: 180px;
+}
+.contactBox_form_input[type=file]::file-selector-button {
+  border: 1px solid #A2A2A2;
+  border-radius: 4px;
+  background-color: #FDFDFD;
+  cursor: pointer;
+}
+.contactBox_form_input[type=file]{
+  cursor: pointer;
+}
+.darkActive .contactBox_form_input[type=file]::file-selector-button {
+  background-color: #043957;
+  border: none;
+  color: #fff;
+}
+.darkActive .contactBox_form_btn{
+  background-color: #041C32 !important;
 }
